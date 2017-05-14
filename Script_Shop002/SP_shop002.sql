@@ -26,7 +26,7 @@ DECLARE @shopId varchar(200)
 
 SET @shopId = (SELECT shopId FROM Company.ThoiTrang_CSDL.dbo.employee WHERE employeeId = @creator)
 							
-IF(@shopId = 'shop001')
+IF(@shopId = 'shop002')
 BEGIN
 SET @lensOfProduct = LEN(@productId)
 SET @lenOfQuantityProduct = LEN(@quantityProductId)
@@ -136,20 +136,20 @@ BEGIN
 END
 END
 
-EXEC CreateOrder 'product001 product002', '2 3', 'customer001', 'employee001'
+EXEC CreateOrder 'product001 product002', '2 3', 'customer001', 'employee019'
 
 -----  Lấy số tiền thu từ hóa đơn vào của 1 shop ----
 
-IF OBJECT_ID('getProfitByMonth_shop001') IS NOT NULL
-DROP PROC getProfitByMonth_shop001
+IF OBJECT_ID('getProfitByMonth_shop002') IS NOT NULL
+DROP PROC getProfitByMonth_shop002
 GO
-CREATE PROC getProfitByMonth_shop001
+CREATE PROC getProfitByMonth_shop002
 	@shopId varchar(255),
 	@year int,
 	@month int
 AS
 BEGIN
-IF(@shopId = 'shop001')
+IF (@shopId = 'shop002')
 BEGIN
 DECLARE @orderCusId varchar(100)
 DECLARE @productId varchar(100)
@@ -196,15 +196,16 @@ DECLARE @cur_orderCus CURSOR
 	DEALLOCATE @cur_orderDetail
 	CLOSE @cur_orderCus
 	DEALLOCATE @cur_orderCus
+
 END
 ELSE
-BEGIN
-	PRINT 'You have only permission to get profit from shop001'
-END
+	BEGIN
+		PRINT 'You have only permission to get profit from shop002'
+	END
 END
 
 
-EXEC getProfitByMonth_shop001 'shop001', 2017, 3
+EXEC getProfitByMonth_shop002 'shop002', 2017, 3
 
 
 
@@ -244,7 +245,7 @@ BEGIN
 
 END
 
-EXEC searchProduct 'B', 'category014', 'shop001'
+EXEC searchProduct 'B', 'category014', 'shop002'
 
 
 	
