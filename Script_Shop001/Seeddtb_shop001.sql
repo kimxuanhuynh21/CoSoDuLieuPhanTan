@@ -1,4 +1,4 @@
-USE ThoiTrang_CSDL
+﻿USE ThoiTrang_CSDL
 GO
 ----------------------- INSERT ----------------------------
 
@@ -75,6 +75,20 @@ INSERT INTO orderDetail(orderId, productId, numberPrice,  quantity, discount, cr
 INSERT INTO orderDetail(orderId, productId, numberPrice,  quantity, discount, creator, voided, voidedBy, voidedReason, dateCreated, dateChanged, note) VALUES ('order1002','product003',1,2,5,3,0,NULL,N'','2017-01-21 21:36:44','2017-01-21 21:36:44',N'');
 INSERT INTO orderDetail(orderId, productId, numberPrice,  quantity, discount, creator, voided, voidedBy, voidedReason, dateCreated, dateChanged, note) VALUES ('order1003','product004',1,2,10,3,0,NULL,N'','2017-03-22 21:36:44','2017-03-22 21:36:44',N'');
 
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee001',N'Phạm Lê Quỳnh Như 1','quynhnhucheer1@gmail.com',N'Quận 5','nhu1.jpg','84898656931');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee002',N'Phạm Lê Quỳnh Như 2','quynhnhucheer2@gmail.com',N'Quận 5','nhu2.jpg','84898656932');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee003',N'Phạm Lê Quỳnh Như 3','quynhnhucheer3@gmail.com',N'Quận 5','nhu3..jpg','84898656933');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee004',N'Phạm Lê Quỳnh Như 4','quynhnhucheer3@gmail.com',N'Quận 5','nhu4.jpg','84898656934');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee005',N'Phạm Lê Quỳnh Như 5','quynhnhucheer3@gmail.com',N'Quận 5','nhu5.jpg','84898656935');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee006',N'Phạm Lê Quỳnh Như 6','quynhnhucheer3@gmail.com',N'Quận 5','nhu6.jpg','84898656936');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee007',N'Phạm Lê Quỳnh Như 7','quynhnhucheer3@gmail.com',N'Quận 5','nhu7.jpg','84898656937');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee008',N'Phạm Lê Quỳnh Như 8','quynhnhucheer3@gmail.com',N'Quận 5','nhu8.jpg','84898656938');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee009',N'Phạm Lê Quỳnh Như 9','quynhnhucheer3@gmail.com',N'Quận 5','nhu9.jpg','84898656939');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee010',N'Huỳnh Kim Xuân 1','quynhnhucheer3@gmail.com',N'Quận 6','xuan1.jpg','84898656940');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee011',N'Huỳnh Kim Xuân 2','quynhnhucheer3@gmail.com',N'Quận 6','xuan2.jpg','84898656941');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee012',N'Huỳnh Kim Xuân 3','quynhnhucheer3@gmail.com',N'Quận 6','xuan3.jpg','84898656942');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee013',N'Huỳnh Kim Xuân 4','quynhnhucheer3@gmail.com',N'Quận 6','xuan4.jpg','84898656943');
+INSERT INTO employee(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee014',N'Huỳnh Kim Xuân 5','quynhnhucheer3@gmail.com',N'Quận 7','xuan5.jpg','84898656953');
 
 ------------ EMPLOYEE ------------------
 
@@ -85,4 +99,6 @@ UPDATE storage SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCH
 UPDATE storage SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3) 
 UPDATE orderCus SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 UPDATE orderDetail SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
+
+
 
