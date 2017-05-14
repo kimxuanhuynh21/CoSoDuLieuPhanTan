@@ -5,7 +5,7 @@ GO
 
 INSERT INTO shop(addressShop, creator, voided,voidedBy,voidedReason,dateCreated,dateChanged,note)VALUES(N'402 An Dương Vương,P.4, Q.5, TP HCM',3,0,NULL,N'','2016-12-12 21:36:44','2016-12-12 21:36:44',N'');
 INSERT INTO shop(addressShop, creator, voided,voidedBy,voidedReason,dateCreated,dateChanged,note)VALUES(N'200 Nguyễn Bặc, P.4, Q. Tân Bình, TP HCM',3,0,NULL,N'','2016-12-12 21:36:44','2016-12-12 21:36:44',N'');
-
+INSERT INTO shop(addressShop, creator, voided,voidedBy,voidedReason,dateCreated,dateChanged,note)VALUES(N'200 Hậu Giang, P.6, Q. 6, TP HCM',3,0,NULL,N'','2016-12-12 21:36:44','2016-12-12 21:36:44',N'');
 
 ----- ROLE ------
 
@@ -736,3 +736,5 @@ UPDATE VIP SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3))
 
 UPDATE employee SET managerId = 'employee' + RIGHT('000' + CAST(managerId AS NVARCHAR(3)), 3)
 UPDATE importVoucher SET paidBy = 'employee' + RIGHT('000' + CAST(paidBy AS NVARCHAR(3)), 3)
+
+UPDATE employee SET shopId = 'shop003' where roleId = 'role005' or roleId = 'role006' or roleId = 'role007'
