@@ -97,7 +97,7 @@ CREATE TABLE employee (
 --drop table emplemployee_publicoyee
 
 CREATE TABLE employee_public (
-	employeeId nvarchar(3) PRIMARY KEY,
+	employeeId nvarchar(200) PRIMARY KEY,
 	name nvarchar(200),
 	addressEmployee nvarchar(200),
 	avatar varchar(200),

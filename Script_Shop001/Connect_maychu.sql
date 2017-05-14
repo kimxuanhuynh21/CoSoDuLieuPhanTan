@@ -1,7 +1,7 @@
 Use [ThoiTrang_CSDL]
 Go
 
---Kết nối tới shop 1
+--Kết nối tới shop 
 -- Tạo mới một login tới linked server (từ máy chủ link đến máy ảo)
 EXEC sp_addlinkedserver
 @server = N'Company',
@@ -19,5 +19,9 @@ EXEC master.dbo.sp_addlinkedsrvlogin
 @locallogin=NULL,
 @rmtuser=N'maychu', -- Thay tên đăng nhập và mật khẩu phù hợp
 @rmtpassword='123456789'
+GO
+
+IF EXISTS(SELECT * FROM sys.servers WHERE name = N'AccessDataSource')
+EXEC master.sys.sp_dropserver 'AccessDataSource','droplogins'  
 GO
 

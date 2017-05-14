@@ -76,12 +76,13 @@ INSERT INTO orderDetail(orderId, productId, numberPrice,  quantity, discount, cr
 INSERT INTO orderDetail(orderId, productId, numberPrice,  quantity, discount, creator, voided, voidedBy, voidedReason, dateCreated, dateChanged, note) VALUES ('order1003','product004',1,2,10,3,0,NULL,N'','2017-03-22 21:36:44','2017-03-22 21:36:44',N'');
 
 
+------------ EMPLOYEE ------------------
+
+
 UPDATE orderCus SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
 UPDATE orderDetail SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
 UPDATE storage SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
-
+UPDATE storage SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3) 
 UPDATE orderCus SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 UPDATE orderDetail SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
-
-UPDATE storage SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 

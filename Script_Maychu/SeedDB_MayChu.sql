@@ -88,6 +88,17 @@ INSERT INTO employee(shopId, roleId, username, pass,  salaryId, managerId, dateS
 INSERT INTO employee(shopId, roleId, username, pass,  salaryId, managerId, dateStarted, dateEnded, creator, retired, retiredBy, retiredReason, dateCreated,dateChanged,note)VALUES('shop002','role007','van.nhieu9','van.nhieu9','salary031','employee007','2017-02-16 21:37:09.000','1899-12-30 00:00:00','employee004',0,'NULL',N'','2016-12-13 21:36:44.000','2016-12-13 21:36:44.000',N'');
 
 
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee010',N'Huỳnh Kim Xuân 1','quynhnhucheer3@gmail.com',N'Quận 6','xuan1.jpg','84898656940');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee011',N'Huỳnh Kim Xuân 2','quynhnhucheer3@gmail.com',N'Quận 6','xuan2.jpg','84898656941');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee012',N'Huỳnh Kim Xuân 3','quynhnhucheer3@gmail.com',N'Quận 6','xuan3.jpg','84898656942');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee013',N'Huỳnh Kim Xuân 4','quynhnhucheer3@gmail.com',N'Quận 6','xuan4.jpg','84898656943');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee014',N'Huỳnh Kim Xuân 5','quynhnhucheer3@gmail.com',N'Quận 7','xuan5.jpg','84898656953');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee024',N'Nguyễn Văn Nhiều 5','quynhnhucheer3@gmail.com',N'Quận 2','nhieu2.jpg','84898656953');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee025',N'Nguyễn Văn Nhiều 6','quynhnhucheer3@gmail.com',N'Quận 2','nhieu2.jpg','84898656954');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee026',N'Nguyễn Văn Nhiều 7','quynhnhucheer3@gmail.com',N'Quận 2','nhieu2.jpg','84898656955');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee027',N'Nguyễn Văn Nhiều 8','quynhnhucheer3@gmail.com',N'Quận 2','nhieu2.jpg','84898656956');
+INSERT INTO employee_public(employeeId, name, email, addressEmployee, avatar, phone) VALUES('employee028',N'Nguyễn Văn Nhiều 9','quynhnhucheer3@gmail.com',N'Quận 3','nhieu2.jpg','84898656956');
+
 ------ VIP ---------
 
 INSERT INTO VIP(name, creator,dateCreated,dateChanged,note)VALUES(N'Khách hàng thân thiết',4,'2011-12-12 21:36:44','2011-12-12 21:36:44',N'');
@@ -701,6 +712,9 @@ INSERT INTO importVoucherDetail(importId, productId, importNumberPrice, quantity
 INSERT INTO importVoucherDetail(importId, productId, importNumberPrice, quantity,creator, voided, voidedBy, voidedReason, dateCreated, dateChanged, note) VALUES ('import003','product070',2,30,9,0,NULL,N'','2016-12-15 21:36:44','2016-12-15 21:36:44',N'');
 
 */
+
+
+
 UPDATE category SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
 UPDATE customer SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
 --UPDATE employee SET retiredBy = 'employee' + RIGHT('000' + CAST(retiredBy AS NVARCHAR(3)), 3) WHERE retiredBy IS NOT NULL
