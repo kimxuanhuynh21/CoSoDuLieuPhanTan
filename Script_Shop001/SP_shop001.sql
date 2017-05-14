@@ -246,6 +246,7 @@ END
 
 EXEC searchProduct 'B', 'category014', 'shop001'
 
+ 
 
 	
 
