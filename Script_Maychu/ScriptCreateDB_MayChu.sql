@@ -93,6 +93,18 @@ CREATE TABLE employee (
 	note nvarchar(255)
 )
 
+------------ EMPLOYEE PUBLIC ---------------
+--drop table emplemployee_publicoyee
+
+CREATE TABLE employee_public (
+	employeeId nvarchar(3) PRIMARY KEY,
+	name nvarchar(200),
+	addressEmployee nvarchar(200),
+	avatar varchar(200),
+	phone varchar(100),
+	email varchar(100),
+)
+
 ---******************** MODULE CUSTOMER MANAGEMENT *********************************---
 
 ------------ VIP ---------------
