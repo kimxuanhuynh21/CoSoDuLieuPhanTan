@@ -6,7 +6,7 @@ Go
 EXEC sp_addlinkedserver
 @server = N'Company',
 @provider=N'SQLOLEDB',
-@datasrc= N'ADMINRG-R0BR3ES\SQLEXPRESS', -- Thay IP hoặc tên máy cho phù hợp
+@datasrc= N'192.168.56.1\SQLEXPRESS', -- Thay IP hoặc tên máy cho phù hợp
 @srvproduct='SQLProduct'
 Go
 --- Kiểm tra kết nối
