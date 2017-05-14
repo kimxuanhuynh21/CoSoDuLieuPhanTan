@@ -8,7 +8,7 @@ Begin
    If NOT Exists(select productId from [Company].[ThoiTrang_CSDL].[dbo].[product] where productId in (Select productId from inserted)) AND Exists(Select productId from inserted)
    BEGIN
     rollback
-    RAISERROR ('Foreign Key not exit', 16, 1);
+    RAISERROR ('Foreign Key not exist', 16, 1);
    END
 
 END
@@ -21,7 +21,7 @@ Begin
    If NOT Exists(select shopId from [Company].[ThoiTrang_CSDL].[dbo].[shop] where shopId in (Select shopId from inserted)) AND Exists(Select shopId from inserted)
    BEGIN
     rollback
-    RAISERROR ('Foreign Key not exit', 16, 1);
+    RAISERROR ('Foreign Key not exist', 16, 1);
    END
 
 END
@@ -34,7 +34,7 @@ Begin
    If NOT Exists(select customerId from [Company].[ThoiTrang_CSDL].[dbo].[customer] where customerId in (Select customerId from inserted)) AND Exists(Select customerId from inserted)
    BEGIN
     rollback
-    RAISERROR ('Foreign Key not exit', 16, 1);
+    RAISERROR ('Foreign Key not exist', 16, 1);
    END
 
 END
@@ -47,7 +47,7 @@ Begin
    If NOT Exists(select productId from [Company].[ThoiTrang_CSDL].[dbo].[product] where productId in (Select productId from inserted)) AND Exists(Select productId from inserted)
    BEGIN
     rollback
-    RAISERROR ('Foreign Key not exit', 16, 1);
+    RAISERROR ('Foreign Key not exist', 16, 1);
    END
 
 END
