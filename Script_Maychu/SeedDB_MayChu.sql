@@ -703,7 +703,7 @@ INSERT INTO importVoucherDetail(importId, productId, importNumberPrice, quantity
 */
 UPDATE category SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
 UPDATE customer SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
-UPDATE employee SET retiredBy = 'employee' + RIGHT('000' + CAST(retiredBy AS NVARCHAR(3)), 3) WHERE retiredBy IS NOT NULL
+--UPDATE employee SET retiredBy = 'employee' + RIGHT('000' + CAST(retiredBy AS NVARCHAR(3)), 3) WHERE retiredBy IS NOT NULL
 UPDATE importVoucher SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
 UPDATE importVoucherDetail SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
 --UPDATE orderCus SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARCHAR(3)), 3) WHERE voidedBy IS NOT NULL
@@ -717,7 +717,7 @@ UPDATE supplier SET voidedBy = 'employee' + RIGHT('000' + CAST(voidedBy AS NVARC
 
 UPDATE category SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 UPDATE customer SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
-UPDATE employee SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
+--UPDATE employee SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 UPDATE importProductPrice SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 UPDATE importVoucher SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 UPDATE importVoucherDetail SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
@@ -734,7 +734,7 @@ UPDATE shop SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)
 UPDATE supplier SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 UPDATE VIP SET creator = 'employee' + RIGHT('000' + CAST(creator AS NVARCHAR(3)), 3)
 
-UPDATE employee SET managerId = 'employee' + RIGHT('000' + CAST(managerId AS NVARCHAR(3)), 3)
+--UPDATE employee SET managerId = 'employee' + RIGHT('000' + CAST(managerId AS NVARCHAR(3)), 3)
 UPDATE importVoucher SET paidBy = 'employee' + RIGHT('000' + CAST(paidBy AS NVARCHAR(3)), 3)
 
 UPDATE employee SET shopId = 'shop003' where roleId = 'role005' or roleId = 'role006' or roleId = 'role007'

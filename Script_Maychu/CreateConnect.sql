@@ -6,7 +6,7 @@ Go
 EXEC sp_addlinkedserver
 @server = N'SRV_SHOP001',
 @provider=N'SQLOLEDB',
-@datasrc= N'192.168.56.101\SQLexpress', -- Thay IP hoặc tên máy cho phù hợp
+@datasrc= N'WIN-7G4UDK2MQ4E\SQLEXPRESS', -- Thay IP hoặc tên máy cho phù hợp
 @srvproduct='SQLProduct'
 Go
 --- Kiểm tra kết nối
@@ -43,3 +43,7 @@ EXEC master.dbo.sp_addlinkedsrvlogin
 @rmtuser = N'mayao',  -- Thay tên đăng nhập và mật khẩu phù hợp
 @rmtpassword = '123456789'
 
+-- Xóa linkedsrvlogin
+IF EXISTS(SELECT * FROM sys.servers WHERE name = N'SRV_SHOP004')
+EXEC master.sys.sp_dropserver 'SRV_SHOP004','droplogins'  
+GO
