@@ -58,12 +58,24 @@ CREATE TABLE orderDetail (
 	note nvarchar(255),
 )
 
+------------ EMPLOYEE ---------------
+--drop table employee
 
-ALTER TABLE storage ADD CONSTRAINT FK_storagesale FOREIGN KEY (shopId) REFERENCES shop(shopId);
-ALTER TABLE storage ADD CONSTRAINT FK_storageproduct FOREIGN KEY (productId) REFERENCES product(productId);
-ALTER TABLE orderCus ADD CONSTRAINT FK_orderCuscustomer FOREIGN KEY (customerId) REFERENCES customer(customerId);
+CREATE TABLE employee (
+	employeeId nvarchar(3) PRIMARY KEY,
+	name nvarchar(200),
+	addressEmployee nvarchar(200),
+	avatar varchar(200),
+	phone varchar(100),
+	email varchar(100),
+)
+
+
+ALTER TABLE storage ADD CONSTRAINT FK_storagesale FOREIGN KEY (shopId) REFERENCES [Company].[ThoiTrang_CSDL].[dbo].[shop](shopId);
+ALTER TABLE storage ADD CONSTRAINT FK_storageproduct FOREIGN KEY (productId) REFERENCES [Company].[ThoiTrang_CSDL].[dbo].[product](productId);
+ALTER TABLE orderCus ADD CONSTRAINT FK_orderCuscustomer FOREIGN KEY (customerId) REFERENCES [Company].[ThoiTrang_CSDL].[dbo].[customer](customerId);
 ALTER TABLE orderDetail ADD CONSTRAINT FK_orderDetailorderCus FOREIGN KEY (orderId) REFERENCES orderCus(orderId);
-ALTER TABLE orderDetail ADD CONSTRAINT FK_orderDetailproduct FOREIGN KEY (productId) REFERENCES product(productId);
+ALTER TABLE orderDetail ADD CONSTRAINT FK_orderDetailproduct FOREIGN KEY (productId) REFERENCES [Company].[ThoiTrang_CSDL].[dbo].[product](productId);
 
 ALTER TABLE storage ADD constraint PK_storage PRIMARY KEY (shopId, productId);
 ALTER TABLE orderDetail ADD CONSTRAINT PK_orderDetail PRIMARY KEY  (orderId, productId);
