@@ -46,7 +46,7 @@ GO
 --drop table orderDetail
 
 CREATE TABLE orderDetail (
-	orderId nvarchar(10) NOT NULL,
+	orderId nvarchar(9) NOT NULL,
 	productId nvarchar(10) NOT NULL,
 	numberPrice int,
 	quantity int,
@@ -65,7 +65,7 @@ GO
 --drop table employee
 
 CREATE TABLE employee (
-	employeeId nvarchar(200) PRIMARY KEY,
+	employeeId nvarchar(11) PRIMARY KEY,
 	name nvarchar(200),
 	addressEmployee nvarchar(200),
 	avatar varchar(200),
@@ -73,9 +73,6 @@ CREATE TABLE employee (
 	email varchar(100),
 )
 GO
-
-INSERT INTO employee SELECT * FROM [Company].[ThoiTrang_CSDL].[dbo].employee
-
 
 --ALTER TABLE storage ADD CONSTRAINT FK_storagesale FOREIGN KEY (shopId) REFERENCES [Company].[ThoiTrang_CSDL].[shop](shopId);
 --ALTER TABLE storage ADD CONSTRAINT FK_storageproduct FOREIGN KEY (productId) REFERENCES [Company].[ThoiTrang_CSDL].[product](productId);
