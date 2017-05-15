@@ -11,7 +11,7 @@ EXEC sp_addlinkedserver
 Go
 --- Kiểm tra kết nối
 EXEC sp_linkedservers
-
+GO
 -- Thực hiện kết nối, đăng nhập tới linked server
 EXEC master.dbo.sp_addlinkedsrvlogin
 @rmtsrvname=N'Company',

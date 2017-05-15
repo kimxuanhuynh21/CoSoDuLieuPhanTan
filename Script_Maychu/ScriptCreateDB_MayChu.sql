@@ -20,6 +20,7 @@ CREATE TABLE shop (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 ------------ STORAGE ---------------
 --drop table storage
@@ -51,6 +52,7 @@ CREATE TABLE role (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 
 ------------ SALARY ---------------
@@ -64,6 +66,7 @@ CREATE TABLE salary (
 	amount float,
 	note nvarchar(255)
 )
+GO
 
 ------------ EMPLOYEE ---------------
 --drop table employee
@@ -92,6 +95,7 @@ CREATE TABLE employee (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 ------------ EMPLOYEE PUBLIC ---------------
 --drop table emplemployee_publicoyee
@@ -104,6 +108,7 @@ CREATE TABLE employee_public (
 	phone varchar(100),
 	email varchar(100),
 )
+GO
 
 ---******************** MODULE CUSTOMER MANAGEMENT *********************************---
 
@@ -119,6 +124,7 @@ CREATE TABLE VIP (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 
 ------------ CUSTOMER ---------------
@@ -140,6 +146,7 @@ CREATE TABLE customer (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 
 ------------ PROMOTION ---------------
@@ -157,6 +164,7 @@ CREATE TABLE promotion (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 
 
@@ -180,6 +188,7 @@ CREATE TABLE sale (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 ------------ CATEGORY ---------------
 
@@ -198,6 +207,7 @@ CREATE TABLE category (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 ------------ PRODUCT ---------------
 --drop table product
@@ -220,6 +230,7 @@ CREATE TABLE product (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 ------------ PRODUCTIMAGE ---------------
 --drop table productImage
@@ -237,6 +248,7 @@ CREATE TABLE productImage (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 
 ------------ PRODUCTPRICE ---------------
@@ -251,6 +263,7 @@ CREATE TABLE productPrice (
 	dateCreated datetime DEFAULT GETDATE(), 
 	note nvarchar(255),
 )
+GO
 
 ------------ ORDER ---------------
 --drop table orderCus
@@ -308,6 +321,7 @@ CREATE TABLE supplier (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 ------------ IMPORT PRODUCT PRICE ---------------
 --drop table importProductPrice
@@ -321,6 +335,7 @@ CREATE TABLE importProductPrice (
 	dateCreated datetime DEFAULT GETDATE(), 
 	note nvarchar(255),
 )
+GO
 
 ------------ IMPORT VOUCHER  ---------------
 --drop table importVoucher
@@ -339,6 +354,7 @@ CREATE TABLE importVoucher (
 	dateChanged datetime, 
 	note nvarchar(255)
 )
+GO
 
 ------------ IMPORT VOUCHER DETAIL ---------------
 --drop table importVoucherDetail
@@ -356,6 +372,7 @@ CREATE TABLE importVoucherDetail (
 	dateChanged datetime, 
 	note nvarchar(255),
 )
+GO
 
 --ALTER TABLE storage ADD CONSTRAINT FK_storagesale FOREIGN KEY (shopId) REFERENCES shop(shopId);
 --ALTER TABLE storage ADD CONSTRAINT FK_storageproduct FOREIGN KEY (productId) REFERENCES product(productId);
