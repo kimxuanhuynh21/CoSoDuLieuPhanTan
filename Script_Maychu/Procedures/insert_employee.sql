@@ -1,3 +1,5 @@
+USE [ThoiTrang_CSDL]
+GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -64,8 +66,7 @@ BEGIN
 	BEGIN
 		INSERT INTO [SRV_SHOP001].[ThoiTrang_CSDL].[dbo].[employee]
 			(
-			[shopId]
-			,[name]
+			[name]
 			,[addressEmployee]
 			,[avatar]
 			,[phone]
@@ -73,8 +74,7 @@ BEGIN
 			)
 		VALUES
 			(
-			@shopId
-			,@name
+			@name
 			,@addressEmployee 
 			,@avatar 
 			,@phone 
@@ -85,8 +85,7 @@ BEGIN
 	BEGIN
 		INSERT INTO [SRV_SHOP002].[ThoiTrang_CSDL].[dbo].[employee]
 			(
-			[shopId]
-			,[name]
+			[name]
 			,[addressEmployee]
 			,[avatar]
 			,[phone]
@@ -94,8 +93,7 @@ BEGIN
 			)
 		VALUES
 			(
-			@shopId
-			,@name
+			@name
 			,@addressEmployee 
 			,@avatar 
 			,@phone 
@@ -106,17 +104,14 @@ BEGIN
 	BEGIN
 		INSERT INTO [ThoiTrang_CSDL].[dbo].[employee_public]
 			(
-			[shopId]
-			,[name]
+			[name]
 			,[addressEmployee]
 			,[avatar]
 			,[phone]
 			,[email]
 			)
 		VALUES
-			(
-			@shopId
-			,@name
+			(@name
 			,@addressEmployee 
 			,@avatar 
 			,@phone 
