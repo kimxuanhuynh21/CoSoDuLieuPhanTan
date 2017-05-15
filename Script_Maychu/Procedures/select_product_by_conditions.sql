@@ -18,7 +18,11 @@ CREATE PROCEDURE select_product_by_conditions
 	,@size nvarchar(100) = NULL
 	,@maxquantity int = NULL
 	,@minquantity int = NULL
-	,@creator nvarchar(11) = NULL 
+	,@creator nvarchar(11) = NULL
+	,@unit nvarchar(100) = NULL 
+	,@descriptionProduct nvarchar(255) = NULL  
+	,@voided tinyint = NULL   
+	,@voidedBy nvarchar(11) = NULL  
 AS
 BEGIN
 	SELECT *
@@ -26,12 +30,16 @@ BEGIN
 	WHERE
 		(@categoryId IS NULL OR (categoryId = @categoryId))
 	AND (@saleId IS NULL OR (saleId = @saleId))
-	AND (@name IS NULL OR (name = @name))
-	AND (@color IS NULL OR (color = @color))
+	AND (@name IS NULL OR (name  LIKE '%'+@name+'%'))
+	AND (@color IS NULL OR (color LIKE '%'+@color+'%'))
 	AND (@size IS NULL OR (size = @size))
 	AND (@maxquantity IS NULL OR (quantity <= @maxquantity))
 	AND (@minquantity IS NULL OR (quantity >= @minquantity))
-	AND (@creator IS NULL OR (creator = @creator))
+	AND (@creator IS NULL OR (creator LIKE '%'+@creator+'%'))
+	AND (@unit IS NULL OR (unit LIKE '%'+@unit+'%'))
+	AND (@descriptionProduct IS NULL OR (descriptionProduct LIKE '%'+@descriptionProduct+'%'))
+	AND (@voided IS NULL OR (voided = @voided))
+	AND (@voidedBy IS NULL OR (voidedBy LIKE '%'+@voidedBy+'%'))
 	AND (@maxPrice IS NULL OR (productId in
 		(
 			SELECT tblPrice.productId

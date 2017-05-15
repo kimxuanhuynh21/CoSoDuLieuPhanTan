@@ -2,27 +2,27 @@ USE [ThoiTrang_CSDL]
 GO
 
 CREATE VIEW view_employee as
-SELECT employee_private.employeeId,
-		employee_private.username,
-		employee_private.pass,
-		employee_private.shopId,
-		employee_private.roleId,
-		employee_private.salaryId,
-		employee_private.managerId,
-		employee_private.dateStarted,
-		employee_private.dateEnded,
-		employee_private.creator,
-		employee_private.retired,
-		employee_private.retiredBy,
-		employee_private.retiredReason,
-		employee_private.dateCreated,
-		employee_private.dateChanged,
-		employee_private.note,
-		employee_public.name,
-		employee_public.phone,
-		employee_public.avatar,
-		employee_public.addressEmployee,
-		employee_public.email
+SELECT employee_private.employeeId as employeeId,
+		employee_private.username as username,
+		employee_private.pass as pass,
+		employee_private.shopId as shopId,
+		employee_private.roleId as roleId,
+		employee_private.salaryId as salaryId,
+		employee_private.managerId as managerId,
+		employee_private.dateStarted as dateStarted,
+		employee_private.dateEnded as dateEnded,
+		employee_private.creator as creator,
+		employee_private.retired as retired,
+		employee_private.retiredBy as retiredBy,
+		employee_private.retiredReason as retiredReason,
+		employee_private.dateCreated as dateCreated,
+		employee_private.dateChanged as dateChanged,
+		employee_private.note as note,
+		employee_public.name as name,
+		employee_public.phone as phone,
+		employee_public.avatar as avatar,
+		employee_public.addressEmployee as addressEmployee,
+		employee_public.email as email
 FROM [dbo].[employee] AS employee_private
 LEFT JOIN (
 SELECT
